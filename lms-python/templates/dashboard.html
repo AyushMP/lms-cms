@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Dashboard</title>
+</head>
+<body>
+    <h1>College Dashboard</h1>
+
+    <!-- List of students -->
+    <h2>List of Students</h2>
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>USN</th>
+            <th>Branch</th>
+            <th>Actions</th>
+        </tr>
+        <!-- Sample data (replace with actual student data from backend) -->
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>USN12345</td>
+            <td>Computer Science</td>
+            <td>
+                <button onclick="updateStudent(1)">Update</button>
+                <button onclick="deleteStudent(1)">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>USN56789</td>
+            <td>Electrical Engineering</td>
+            <td>
+                <button onclick="updateStudent(2)">Update</button>
+                <button onclick="deleteStudent(2)">Delete</button>
+            </td>
+        </tr>
+        <!-- Add more rows for other students -->
+    </table>
+
+    <!-- Buttons for Add, Login, and Logout -->
+    <button onclick="showAddForm()">Add Student</button>
+    <button onclick="goToLoginPage()">Login</button>
+    <button onclick="logout()">Logout</button>
+
+    <!-- Hidden form for adding a new student -->
+    <div id="addForm" style="display: none;">
+        <h2>Add Student</h2>
+        <form>
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" required><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="usn">USN:</label>
+            <input type="text" id="usn" name="usn" required><br>
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required><br>
+            <button type="submit" onclick="addStudent()">Add</button>
+            <button type="button" onclick="hideAddForm()">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        // Functions to handle the buttons' actions
+        function showAddForm() {
+            document.getElementById('addForm').style.display = 'block';
+        }
+
+        function hideAddForm() {
+            document.getElementById('addForm').style.display = 'none';
+        }
+
+        function addStudent() {
+            // Add the logic to send the new student data to the backend and update the table
+            alert('Student added!');
+            hideAddForm();
+        }
+
+        function updateStudent(studentId) {
+            // Add the logic to update the student data for the given studentId
+            alert('Updating student with ID: ' + studentId);
+        }
+
+        function deleteStudent(studentId) {
+            // Add the logic to delete the student data for the given studentId
+            alert('Deleting student with ID: ' + studentId);
+        }
+
+        function goToLoginPage() {
+            // Add the logic to navigate to the login page
+            alert('Going to login page');
+        }
+
+        function logout() {
+            // Add the logic to perform logout (if applicable)
+            alert('Logged out');
+        }
+    </script>
+</body>
+</html>
